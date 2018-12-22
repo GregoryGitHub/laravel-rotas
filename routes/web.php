@@ -18,3 +18,9 @@ Route::get('/', function () {
 Route::get('/ola', function () {
     return "<h1> Olá Visitante!</h1>";
 });
+
+
+#Parametros Via Get
+Route::get('/ola/{param1}', function ($p1) {
+    return "<h1> Olá $p1!</h1>";
+});
