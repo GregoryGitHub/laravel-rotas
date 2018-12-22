@@ -40,3 +40,27 @@ Route::get('/paramopicional/{param1?}', function ($p1 =null) {
      return "Você não passou nenhum parametro";
     endif;
 });
+
+
+#Agrupamento de rotas
+/**
+ * Ajuda na legibilidade do código
+ */
+Route::prefix('app')->group(function () {
+    Route::get('/home', function () {
+        return " Página Home";
+    });
+    Route::get('/profile', function () {
+        return " Página Perfil";
+    });
+    Route::get('/about', function () {
+        return " Página Sobre";
+    });
+});
+
+
+#Redirecionamento de rotas
+Route::redirect("app","app/home",301);
+
+#Redirecionando para Views
+Route::view("/hello", "hello"); // Modo abreviado
