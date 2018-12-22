@@ -24,3 +24,19 @@ Route::get('/ola', function () {
 Route::get('/ola/{param1}', function ($p1) {
     return "<h1> Olá $p1!</h1>";
 });
+
+
+#Parametros com regex
+Route::get('/nomeregex/{param1}', function ($p1) {
+    return "<h1> Olá $p1!</h1>";
+})->where('param1',"[a-zA-Z]+");
+
+
+#Parametros Opicionais
+Route::get('/paramopicional/{param1?}', function ($p1 =null) {
+    if(isset($p1)):
+     return "<h1> Parâmetro $p1!</h1>";
+    else:
+     return "Você não passou nenhum parametro";
+    endif;
+});
