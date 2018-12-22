@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/ola', function () {
+    return "<h1> Olá Visitante!</h1>";
+});
