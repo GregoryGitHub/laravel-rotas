@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -64,3 +64,11 @@ Route::redirect("app","app/home",301);
 
 #Redirecionando para Views
 Route::view("/hello", "hello"); // Modo abreviado
+
+Route::view("/hellonome","viewnome",["nome"=>"Henrique", "sobrenome"=>"Gregorio"]);
+
+
+Route::post("/rest/post/", function(Request $request){
+    $nome = $request->input("nome");
+    return "Hello $nome";
+});
